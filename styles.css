@@ -1,3 +1,8 @@
+* {
+  margin: 0;
+  
+  }
+
 html, body {
     height: 100%;
     background-color: #eee;
@@ -80,6 +85,10 @@ html, body {
   
     #content-wrapper {
       margin-left: 200px;
+      margin-top: 0;
+      text-align: center;
+      width: 100%;
+      
     }
   
    
@@ -96,6 +105,7 @@ html, body {
   #footer a {
     color: #fff;
     text-decoration: underline;
+    flex-wrap: wrap;
   }
 
   .sidedrawer-toggle {
@@ -121,4 +131,42 @@ html, body {
     background-size: contain;
     color: #fff;
   }
+  .topnav {
+    float: right;
+  }
   
+  h1 {
+    margin-top: 0;
+    width: 100%;
+    position: sticky; top: 0;
+  }
+
+  #content-wrapper {
+width: calc(100% - 200px);
+  }
+
+  .demo {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+  }
+
+  .container {
+    position: relative;
+  
+    height: 300px;
+   
+  }
+ .container .box{
+  position: relative;
+  flex: 1, 0, 200px;
+  height: calc(300px - 30px);
+  background: #000;
+  margin: 15px;
+  box-sizing: border-box;
+  overflow: hidden;
+  border-radius: 10px;
+ }
+ .box {
+  color: azure;
+ }
