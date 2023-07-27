@@ -20,7 +20,7 @@ fetch("https://type.fit/api/quotes")
     var randomQuote = data[randomIndex];
     console.log(randomQuote);
 
-    const quoteDiv = document.getElementById('quoteContainer')
+    const quoteDiv = document.querySelector('.box1')
     quoteDiv.textContent = randomQuote.text
     const authorDiv = document.createElement("div");
     authorDiv.textContent= randomQuote.author;
@@ -35,7 +35,7 @@ fetch("https://type.fit/api/quotes")
     const response = await fetch('http://api.adzuna.com/v1/api/jobs/gb/search/1?app_id=d4917318&app_key=39639ccbd3d4bede5ac35be1d8b49c87&results_per_page=5&what=javascript%20developer&content-type=application/json');
     const data = await response.json();
   
-    const jobContainer = document.getElementById('jobContainer');
+    const jobContainer = document.getElementById('box');
   
     data.results.forEach(result => { 
       const { title, description, location, company } = result;
