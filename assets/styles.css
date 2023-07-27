@@ -99,6 +99,7 @@ html, body {
     background-color: #0288D1;
     color: #fff;
     text-align: center;
+    
   }
   
   #footer a {
@@ -155,4 +156,41 @@ html, body {
   .container-fluid {
     text-align: center;
   }
+  body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .box-container {
+    display: flex;
+  }
+  
+  .box {
+    width: 1000px;
+    height:550px;
+    border-style: groove;
+    background-color:grey;
+    margin: 10px;
+   border-radius: 25px;
+   
+  }
+  
+  .box1 {
+    width: 800px;
+    height:550px;
+    border-style: groove;
+    background-color:grey;
+    margin: 10px;
+    border-radius: 25px;
+  }
+
+  #inBox {
+    width:100px;
+    height: 100px;
+    margin: 10px;
+    background: red;
+  
+  }
+  
+  
   
