@@ -11,7 +11,6 @@ html, body {
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
   }
   #header {
-    position: fixed;
     top: 0;
     right: 0;
     left: 0;
@@ -129,23 +128,22 @@ html, body {
   }
   .user-input {
     display:flex;
-    flex-wrap: wrap;
   }
   #city-btn {
-    width:72%;
+    width:16%;
     height:20px;
-    background-color: #0288D1;
-    border-radius: 4px;
+    background-color: red;
+    border-radius: 20px;
     color:#fff;
     cursor:pointer;
     border:none;
 
   }
   #job-btn {
-    width:72%;
+    width:16%;
     height:20px;
-    background-color: #0288D1;
-    border-radius: 4px;
+    background-color: red;
+    border-radius: 20px;
     color:#fff;
     cursor:pointer;
     border:none;
