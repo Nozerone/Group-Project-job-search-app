@@ -18,6 +18,9 @@ html, body {
     transition: left 0.2s;
     margin:0;
   }
+  head{
+    height: 8%;
+  }
   
   #sidedrawer {
     position: fixed;
@@ -128,9 +131,10 @@ html, body {
   }
   .user-input {
     display:flex;
+    margin-left: 9%;
   }
   #city-btn {
-    width:16%;
+    width: 11%;
     height:20px;
     background-color: red;
     border-radius: 20px;
@@ -140,7 +144,7 @@ html, body {
 
   }
   #job-btn {
-    width:16%;
+    width: 11%;
     height:20px;
     background-color: red;
     border-radius: 20px;
