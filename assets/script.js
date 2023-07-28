@@ -22,6 +22,7 @@ fetch("https://type.fit/api/quotes")
 
     const quoteDiv = document.querySelector('.box1')
     quoteDiv.textContent = randomQuote.text
+    quoteDiv.setAttribute("style", "padding-left: 20px; padding-top: 20px; color: white; font-size: 30px; text-align:center;")
     const authorDiv = document.createElement("div");
     authorDiv.textContent= randomQuote.author;
     authorDiv.setAttribute("id", "authorContainer")
@@ -48,6 +49,7 @@ fetch("https://type.fit/api/quotes")
         <p>${location.display_name}</p>
         <p>${company.display_name}</p>
       `;
+      jobDiv.setAttribute("style","padding-left: 20px; padding-top: 20px; color: white; font-size: 30px;")
   
       jobContainer.appendChild(jobDiv);
     });
