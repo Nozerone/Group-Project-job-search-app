@@ -1,15 +1,15 @@
 var cityInputbtnEl = document.getElementById("city-btn");
 var jobInputbtnEl = document.getElementById("job-btn");
 
-cityInputbtnEl.addEventListener("click", function(){
+function city(){
     var cityInput= document.getElementById("city").value;
     localStorage.setItem("city", cityInput);
 
-})
-jobInputbtnEl.addEventListener("click", function(){
+}
+function jobTitle(){
     var jobInput = document.getElementById("job").value;
     localStorage.setItem("job", jobInput);
-})
+}
 fetch("https://type.fit/api/quotes")
   .then(function(response) {
     return response.json();
@@ -31,9 +31,15 @@ fetch("https://type.fit/api/quotes")
   })
 
   var searchBtn= document.getElementById("searchbtn");
+  APP_ID = "826d2410";
+API_KEY = "2bc00ba4de21d460a401760a4f8a0fd7";
 
   searchBtn.addEventListener('click', async () => {
-    const response = await fetch('http://api.adzuna.com/v1/api/jobs/gb/search/1?app_id=d4917318&app_key=39639ccbd3d4bede5ac35be1d8b49c87&results_per_page=5&what=javascript%20developer&content-type=application/json');
+    jobTitle();
+    city();
+    var cityName= localStorage.getItem("city");
+    var jobType= localStorage.getItem("job");
+    const response = await fetch(`https://api.adzuna.com/v1/api/jobs/us/search/3?app_id=${APP_ID}&app_key=${API_KEY}&title_only=${jobType}&where=${cityName}`);
     const data = await response.json();
   
     const jobContainer = document.getElementById('box');
