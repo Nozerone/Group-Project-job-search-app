@@ -50,6 +50,7 @@ var divs =[];
     data.results.forEach(result => { 
       const { title, description, location, company, redirect_url } = result
       const jobDiv = document.createElement('div');
+      const newDiv = document.createElement('div')
       jobDiv.innerHTML=""
       console.log(data);
       jobDiv.innerHTML = `
@@ -59,9 +60,10 @@ var divs =[];
         <p>${company.display_name}</p>
         <a href="${redirect_url}"target="_blank">${redirect_url}</a>
       `;
-      jobDiv.setAttribute("style","padding-left: 20px; padding-top: 20px; color: white; font-size: 30px;")
-
-      jobContainer.appendChild(jobDiv);
+      jobDiv.setAttribute("style","padding-left: 20px; padding-top: 20px; color: white;")
+      newDiv.appendChild(jobDiv);
+      newDiv.setAttribute("style", "background-color: rgb(163, 163, 163); margin-bottom: 20px; border-radius:25px;");
+      jobContainer.appendChild(newDiv);
     });
 
   });
