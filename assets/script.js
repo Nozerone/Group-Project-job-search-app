@@ -48,15 +48,16 @@ API_KEY = "2bc00ba4de21d460a401760a4f8a0fd7";
 var divs =[];
 
     data.results.forEach(result => { 
-      const { title, description, location, company } = result
+      const { title, description, location, company, redirect_url } = result
       const jobDiv = document.createElement('div');
       jobDiv.innerHTML=""
-      console.log(jobDiv);
+      console.log(data);
       jobDiv.innerHTML = `
         <h3>${title}</h3>
         <p>${description}</p>
         <p>${location.display_name}</p>
         <p>${company.display_name}</p>
+        <a href="${redirect_url}"target="_blank">${redirect_url}</a>
       `;
       jobDiv.setAttribute("style","padding-left: 20px; padding-top: 20px; color: white; font-size: 30px;")
 
