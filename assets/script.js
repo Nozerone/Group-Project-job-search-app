@@ -35,6 +35,8 @@ fetch("https://type.fit/api/quotes")
 API_KEY = "2bc00ba4de21d460a401760a4f8a0fd7";
 
   searchBtn.addEventListener('click', async () => {
+    const jobContainer = document.getElementById('box');
+    jobContainer.innerHTML="";
     jobTitle();
     city();
     var cityName= localStorage.getItem("city");
@@ -42,12 +44,13 @@ API_KEY = "2bc00ba4de21d460a401760a4f8a0fd7";
     const response = await fetch(`https://api.adzuna.com/v1/api/jobs/us/search/3?app_id=${APP_ID}&app_key=${API_KEY}&title_only=${jobType}&where=${cityName}`);
     const data = await response.json();
   
-    const jobContainer = document.getElementById('box');
-  
+
+var divs =[];
+
     data.results.forEach(result => { 
-      const { title, description, location, company } = result;
-    
+      const { title, description, location, company } = result
       const jobDiv = document.createElement('div');
+      jobDiv.innerHTML=""
       console.log(jobDiv);
       jobDiv.innerHTML = `
         <h3>${title}</h3>
@@ -56,7 +59,8 @@ API_KEY = "2bc00ba4de21d460a401760a4f8a0fd7";
         <p>${company.display_name}</p>
       `;
       jobDiv.setAttribute("style","padding-left: 20px; padding-top: 20px; color: white; font-size: 30px;")
-  
+
       jobContainer.appendChild(jobDiv);
     });
+
   });
