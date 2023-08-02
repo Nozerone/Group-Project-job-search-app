@@ -23,51 +23,7 @@ html, body {
     height: 8%;
   }
   
-  #sidedrawer {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    width: 200px;
-    left: -200px;
-    overflow: auto;
-    z-index: 2;
-    background-color: #fff;
-    transition: transform 0.2s;
-  }
-  
-  #sidedrawer.active {
-    transform: translate(200px);
-  }
-  
-  #sidedrawer-brand {
-    padding-left: 20px;
-  }
-  
-  #sidedrawer ul {
-    list-style: none;
-  }
-  
-  #sidedrawer > ul {
-    padding-left: 0px;
-  }
-  
-  #sidedrawer > ul > li:first-child {
-    padding-top: 15px;
-  }
-  
-  #sidedrawer strong {
-    display: block;
-    padding: 15px 22px;
-    cursor: pointer;
-  }
-  
-  #sidedrawer strong:hover {
-    background-color: #E0E0E0;
-  }
-  
-  #sidedrawer strong + ul > li {
-    padding: 6px 0px;
-  }
+ 
   
   #content-wrapper {
     min-height: 100%;
@@ -126,15 +82,32 @@ html, body {
     font-weight: 10000000000;
   }
   h1 {
-    background-color: #0288D1;
+   background-image: url(../assets/pictures/HudsonHenry_GoldenGate-2.jpg);
+   background-repeat: no-repeat;
+   background-size: cover;
+   image-rendering: -webkit-optimize-contrast;
+   background-position: 50% 50%;
     text-align: center;
-    background-size: contain;
     color: #fff;
+    height: 13rem;
   }
   .user-input {
     display:flex;
-    margin-left: 9%;
+    flex-direction: column;
+    justify-content: center;
+    width: 35%;
+    margin-left: 30%;
+    margin-bottom: 10px;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
   }
+#city{
+  height: 23px;
+}
+#job{
+  height: 23px;
+}
   #city-btn {
     width: 11%;
     height:20px;
@@ -156,13 +129,13 @@ html, body {
   }
   #searchbtn {
     width: 11%;
-    height:35px;
+    height:33px;
     background-color: red;
     border-radius: 20px;
     color:#fff;
     cursor:pointer;
     border:none;
-    margin-left: 635px;
+    margin-left: 574px;
 
 
   }
