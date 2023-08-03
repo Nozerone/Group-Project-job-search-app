@@ -10,25 +10,30 @@ function jobTitle(){
     var jobInput = document.getElementById("job").value;
     localStorage.setItem("job", jobInput);
 }
+
 fetch("https://type.fit/api/quotes")
   .then(function(response) {
     return response.json();
-
   })
   .then(function(data) {
     var randomIndex = Math.floor(Math.random() * data.length);
     var randomQuote = data[randomIndex];
     console.log(randomQuote);
 
-    const quoteDiv = document.querySelector('.box1')
-    quoteDiv.textContent = randomQuote.text
-    quoteDiv.setAttribute("style", "padding-left: 20px; padding-top: 20px; color: white; font-size: 30px; text-align:center;")
-    const authorDiv = document.createElement("div");
-    authorDiv.textContent= randomQuote.author;
-    authorDiv.setAttribute("id", "authorContainer")
-    quoteDiv.appendChild(authorDiv);
+    // Find the randomQuote where the text contains "type.fit"
+    if (randomQuote.text.includes("type.fit")) {
+      randomQuote.text = randomQuote.text.replace("type.fit", "");
+    }
 
-  })
+    const quoteDiv = document.querySelector('.box1');
+    quoteDiv.textContent = randomQuote.text;
+    quoteDiv.setAttribute("style", "padding-left: 20px; padding-top: 20px; color: white; font-size: 30px; text-align:center;");
+    
+    const authorDiv = document.createElement("div");
+    authorDiv.textContent = randomQuote.author;
+    authorDiv.setAttribute("id", "authorContainer");
+    quoteDiv.appendChild(authorDiv);
+  });
 
   var searchBtn= document.getElementById("searchbtn");
   APP_ID = "826d2410";
