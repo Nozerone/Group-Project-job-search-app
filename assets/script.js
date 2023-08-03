@@ -1,6 +1,30 @@
 var cityInputbtnEl = document.getElementById("city-btn");
 var jobInputbtnEl = document.getElementById("job-btn");
+var inspirationalbtnEl = document.getElementById("inspirationalbtn")
+inspirationalbtnEl.addEventListener("click", function(){
+  var authorEl= document.getElementById("authorContainer");
+  var quoteEl= document.getElementById("quoteContainer");
+  quoteEl.textContent="";
+  authorEl.textContent="";
+  fetch("https://type.fit/api/quotes")
+  .then(function(response) {
+    return response.json();
 
+  })
+  .then(function(data) {
+    var randomIndex = Math.floor(Math.random() * data.length);
+    var randomQuote = data[randomIndex];
+    console.log(randomQuote);
+
+    const quoteDiv = document.querySelector('.box1')
+    quoteDiv.textContent = randomQuote.text
+    quoteDiv.setAttribute("style", "padding-left: 20px; padding-top: 20px; color: white; font-size: 30px; text-align:center;")
+    const authorDiv = document.createElement("div");
+    authorDiv.textContent= randomQuote.author;
+    authorDiv.setAttribute("id", "authorContainer")
+    quoteDiv.appendChild(authorDiv);
+  })
+} )
 function city(){
     var cityInput= document.getElementById("city").value;
     localStorage.setItem("city", cityInput);
@@ -55,6 +79,7 @@ var divs =[];
     data.results.forEach(result => { 
       const { title, description, location, company, redirect_url } = result
       const jobDiv = document.createElement('div');
+      const newDiv = document.createElement('div')
       jobDiv.innerHTML=""
       console.log(data);
       jobDiv.innerHTML = `
@@ -64,9 +89,10 @@ var divs =[];
         <p>${company.display_name}</p>
         <a href="${redirect_url}"target="_blank">${redirect_url}</a>
       `;
-      jobDiv.setAttribute("style","padding-left: 20px; padding-top: 20px; color: white; font-size: 30px;")
-
-      jobContainer.appendChild(jobDiv);
+      jobDiv.setAttribute("style","padding-left: 20px; padding-top: 20px; color: white;")
+      newDiv.appendChild(jobDiv);
+      newDiv.setAttribute("style", "background-color: rgb(163, 163, 163); margin-bottom: 20px; border-radius:25px;");
+      jobContainer.appendChild(newDiv);
     });
 
   });
